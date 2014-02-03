@@ -1,16 +1,14 @@
 # pgf of negative binomial required
 
-pgf.NB <- function(t,alpha,p)
-  {
-   ((1-(1-p)*t)/p)^(-alpha)
-  }
+#set it up here
+
+#call it pgf.NB
 
 
-# 1. Simple example
-# Single gamma-distributed factor
-# We pretend we can't compute the distribution function
+#single gamma-distributed factor where we assume we cannot define function
 
-# Number of obligors
+#obligors
+
 n = 500
 
 # Parameters of gamma distribution
@@ -23,7 +21,8 @@ PDs = rep(0.01,n)
 exposures = rep(1,n)
 
 # Loss should be NB(alpha, beta/beta+sum(PDs))
-# Compute true VaR at 95% level
+# Compute true value at risk at 95% level
+
 p = beta/(beta+sum(PDs))
 qnbinom(0.95,size=alpha,prob=p)
 
@@ -56,7 +55,8 @@ min(loss.values[cdf>=0.95])
 
 
 
-# 2. An example with exposure bands
+# 2. Example with exposure bands
+
 sigma = sqrt(0.2)
 alpha = sigma^{-2}
 beta = sigma^{-2}
