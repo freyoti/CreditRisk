@@ -1,7 +1,5 @@
 # pgf of negative binomial required
 
-#set it up here
-
 #call it pgf.NB
 
 
